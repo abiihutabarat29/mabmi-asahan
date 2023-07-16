@@ -78,6 +78,13 @@
 <script src="{{ asset('front/js/waypoints.min.js') }}"></script>
 <!-- custom js -->
 <script src="{{ asset('front/js/custom.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ url('plugins/select2/js/select2.full.min.js') }}"></script>
+<script>
+    $('.select2bs4').select2({
+        theme: 'bootstrap4'
+    })
+</script>
 </body>
 
 </html>

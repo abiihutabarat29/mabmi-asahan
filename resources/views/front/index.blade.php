@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-lg-4 col-xl-2 col-sm-4">
                                     <div class="testimonial_slider_img">
-                                        <img src="{{ asset('front/img/gambar-1.jpg') }}" class="img-style card-img-top"
+                                        <img src="{{ asset('front/img/gambar-1.jpg') }}" class="card-img-top"
                                             alt="#" width="1000pt">
                                     </div>
                                 </div>

@@ -30,7 +30,7 @@
                         <hr>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post"
+                        <form class="form-contact contact_form" action="{{ route('register.store') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="col-sm-12">
@@ -89,7 +89,7 @@
                             <div class="col-sm-12">
                                 <label>Agama <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control select2bs4" style="width: 100%;">
                                         <option selected>::Pilih Agama::</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen Protestan">Kristen Protestan</option>
@@ -103,7 +103,7 @@
                             <div class="col-sm-12">
                                 <label>Suku <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control select2bs4" style="width: 100%;">
                                         <option selected>::Pilih Suku::</option>
                                         <option value="Jawa">Jawa</option>
                                         <option value="Sunda">Sunda</option>
