@@ -4,7 +4,7 @@
     @include('front.layouts.header')
 
     <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
+    <section class="breadcrumb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -87,13 +87,35 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <label>Jenis Kelamin <span class="text-danger">*</span></label>
-                                <select class="custom-select">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <label>Agama <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option selected>::Pilih Agama::</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen Protestan">Kristen Protestan</option>
+                                        <option value="Kristen Katholik">Kristen Katholik</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Konghucu">Konghucu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label>Suku <span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option selected>::Pilih Suku::</option>
+                                        <option value="Jawa">Jawa</option>
+                                        <option value="Sunda">Sunda</option>
+                                        <option value="Batak">Batak</option>
+                                        <option value="Melayu">Melayu</option>
+                                        <option value="Minangkabau">Minangkabau</option>
+                                        <option value="Betawi">Betawi</option>
+                                        <option value="Dayak">Dayak</option>
+                                        <option value="Aceh">Aceh</option>
+                                        <option value="Bali">Bali</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-sm-12">
                                 <label>No HP / WhatsApp <span class="text-danger">*</span></label>

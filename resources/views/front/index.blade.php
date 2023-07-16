@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-lg-4 col-xl-2 col-sm-4">
                                     <div class="testimonial_slider_img">
-                                        <img src="{{ asset('front/img/gambar-1.jpg') }}" class="card-img-top"
+                                        <img src="{{ asset('front/img/gambar-1.jpg') }}" class="img-style card-img-top"
                                             alt="#" width="1000pt">
                                     </div>
                                 </div>
@@ -80,14 +80,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 @if ($anggota->isEmpty())
-                    <div class="row justify-content-center">
-                        <div class="col-sm-12 col-lg-6 col-xl-4">
-                            <div class="single-home-blog">
-                                <div class="card">
-                                    <p style="text-align: center">----Data Anggota Kosong----</p>
-                                </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-4">
+                        <div class="single-home-blog">
+                            <div class="card">
+                                <p style="text-align: center">----Data Anggota Kosong----</p>
                             </div>
                         </div>
                     </div>
