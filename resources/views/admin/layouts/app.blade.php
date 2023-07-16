@@ -16,13 +16,8 @@
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-1 d-flex">
                     <div class="image mt-2">
-                        @if (Auth::user()->foto == null)
-                            <img src="{{ url('storage/foto-user/blank.png') }}" class="img-circle elevation-2"
-                                alt="User Image">
-                        @else
-                            <img src="{{ url('storage/foto-user/' . Auth::user()->foto) }}"
-                                class="img-circle elevation-2" alt="User Image">
-                        @endif
+                        <img src="{{ url('storage/foto-user/user.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ Auth::user()->nama }}</a>

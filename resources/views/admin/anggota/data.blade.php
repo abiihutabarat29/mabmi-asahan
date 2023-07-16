@@ -28,8 +28,8 @@
                                         <th style="width:5%">No</th>
                                         <th style="width:10%">NIK</th>
                                         <th>Nama</th>
-                                        <th style="width:12%">Registrasi</th>
-                                        <th style="width:8%">Status</th>
+                                        <th class="text-center" style="width:17%">Registrasi</th>
+                                        <th class="text-center" style="width:8%">Status</th>
                                         <th class="text-center" style="width: 10%">Action</th>
                                     </tr>
                                 </thead>

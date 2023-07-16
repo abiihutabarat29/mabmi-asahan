@@ -36,37 +36,55 @@
                             <div class="col-sm-12">
                                 <label for="">NIK <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="nik" id="nik" type="text"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan NIK'"
-                                        placeholder='Masukkan NIK'>
+                                    <input class="form-control  @error('nik') is-invalid @enderror" name="nik"
+                                        id="nik" type="text" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Masukkan NIK'" placeholder='Masukkan NIK'>
+                                    @error('nik')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <label for="">Nama <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="nama" id="nama" type="text"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Nama'"
-                                        placeholder='Masukkan Nama'>
+                                    <input class="form-control  @error('nama') is-invalid @enderror" name="nama"
+                                        id="nama" type="text" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Masukkan Nama'" placeholder='Masukkan Nama'>
+                                    @error('nama')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <label for="">Tempat Lahir <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <textarea class="form-control w-100" name="tempat_lahir" id="tempat_lahir" cols="15" rows="3"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tempat Lahir'" placeholder='Tempat Lahir'></textarea>
+                                    <textarea class="form-control w-100  @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" id="tempat_lahir"
+                                        cols="15" rows="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tempat Lahir'"
+                                        placeholder='Tempat Lahir'></textarea>
+                                    @error('tempat_lahir')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <label for="">Tanggal Lahir <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="tgl_lahir" id="tgl_lahir" type="date">
+                                    <input class="form-control  @error('tgl_lahir') is-invalid @enderror"
+                                        name="tgl_lahir" id="tgl_lahir" type="date">
+                                    @error('tgl_lahir')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <label for="">Alamat Lengkap <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <textarea class="form-control w-100" name="alamat" id="alamat" cols="15" rows="3"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Lengkap'" placeholder='Alamat Lengkap'></textarea>
+                                    <textarea class="form-control w-100  @error('alamat') is-invalid @enderror" name="alamat" id="alamat" cols="15"
+                                        rows="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Lengkap'"
+                                        placeholder='Alamat Lengkap'></textarea>
+                                    @error('alamat')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -84,13 +102,18 @@
                                             Perempuan
                                         </label>
                                     </div>
+                                    @error('gender')
+                                        <small class="text-danger"><strong>{{ $message }}</strong></small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <label>Agama <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <select class="form-control select2bs4" style="width: 100%;">
-                                        <option selected>::Pilih Agama::</option>
+                                    <select name="agama" id="agama"
+                                        class="form-control select2bs4  @error('agama') is-invalid @enderror"
+                                        style="width: 100%;">
+                                        <option>::Pilih Agama::</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen Protestan">Kristen Protestan</option>
                                         <option value="Kristen Katholik">Kristen Katholik</option>
@@ -98,13 +121,18 @@
                                         <option value="Budha">Budha</option>
                                         <option value="Konghucu">Konghucu</option>
                                     </select>
+                                    @error('agama')
+                                        <small class="text-danger"><strong>{{ $message }}</strong></small>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <label>Suku <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <select class="form-control select2bs4" style="width: 100%;">
-                                        <option selected>::Pilih Suku::</option>
+                                    <select name="suku" id="suku"
+                                        class="form-control select2bs4  @error('suku') is-invalid @enderror"
+                                        style="width: 100%;">
+                                        <option>::Pilih Suku::</option>
                                         <option value="Jawa">Jawa</option>
                                         <option value="Sunda">Sunda</option>
                                         <option value="Batak">Batak</option>
@@ -115,22 +143,31 @@
                                         <option value="Aceh">Aceh</option>
                                         <option value="Bali">Bali</option>
                                     </select>
+                                    @error('suku')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <label>No HP / WhatsApp <span class="text-danger">*</span></label>
+                                <label>No HP/WhatsApp <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="nohp" id="nohp" type="number"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Nomor'"
-                                        placeholder='Masukkan Nomor'>
+                                    <input class="form-control  @error('nohp') is-invalid @enderror" name="nohp"
+                                        id="nohp" type="number" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Masukkan Nomor'" placeholder='Masukkan Nomor'>
+                                    @error('nohp')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <label>Email Aktif <span class="text-danger">*</span></label>
                                 <div class="form-group">
-                                    <input class="form-control" name="email" id="email" type="email"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Masukkan Email'"
-                                        placeholder='Masukkan Email'>
+                                    <input class="form-control  @error('email') is-invalid @enderror" name="email"
+                                        id="email" type="email" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Masukkan Email'" placeholder='Masukkan Email'>
+                                    @error('email')
+                                        <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
@@ -138,8 +175,12 @@
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Scan KTP <span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" type="file" name="ktp" id="foto"
-                                            accept="image/jpeg">
+                                        <input class="form-control  @error('ktp') is-invalid @enderror" type="file"
+                                            name="ktp" id="ktp" accept="image/jpeg">
+                                        @error('ktp')
+                                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror
+                                        <small><i>*Scan KTP maksimal 1MB dan berekstensi jpeg, jpg, png.</i></small>
                                     </div>
                                 </div>
                             </div>
@@ -148,8 +189,12 @@
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Pas Photo <span
                                                 class="text-danger">*</span></label>
-                                        <input class="form-control" type="file" name="foto" id="foto"
-                                            accept="image/jpeg">
+                                        <input class="form-control  @error('foto') is-invalid @enderror"
+                                            type="file" name="foto" id="foto" accept="image/jpeg">
+                                        @error('foto')
+                                            <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
+                                        @enderror
+                                        <small><i>*Pas Photo maksimal 1MB dan berekstensi jpeg, jpg, png.</i></small>
                                     </div>
                                 </div>
                             </div>

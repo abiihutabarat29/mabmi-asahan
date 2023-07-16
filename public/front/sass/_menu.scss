@@ -26,7 +26,7 @@
 			@extend %custom_btn_bg_1;
 			background-size: 200% auto;
 		}
-		
+
 	}
 	.main-menu-item {
 		text-align: right;
@@ -46,7 +46,7 @@
 				&:hover{
 					color: #ee390f;
 				}
-				
+
 			}
 			.btn_1{
 				color: $white-color;
@@ -54,14 +54,14 @@
 				padding: 11.5px 33px;
 				margin-left: 41px;
 			}
-			
+
 		}
 	}
-	
+
 }
 
 .home_menu {
-	
+
 }
 
 .dropdown-menu{
@@ -72,7 +72,7 @@
 .dropdown {
     .dropdown-menu {
         transition: all 0.5s;
-        overflow: hidden;
+        overflow: ;
         transform-origin: top center;
         transform: scale(1,0);
 		display: block;
@@ -98,12 +98,12 @@
 			ul {
 				li .nav-link{
 					color: $black-color !important;
-					
+
 				}
 			}
 		}
 	}
-	
+
 	.navbar-light .navbar-toggler{
 		border-color: transparent;
 	}
@@ -115,7 +115,7 @@
 		width: 100%;
 		background-color: $white-color;
 		text-align: center !important;
-		
+
 	}
 	.main_menu .main-menu-item{
 		text-align: left !important;
@@ -154,7 +154,7 @@
 			ul {
 				li .nav-link{
 					color: $black-color !important;
-					
+
 				}
 			}
 		}
@@ -170,7 +170,7 @@
 		width: 100%;
 		background-color: $white-color;
 		text-align: center !important;
-		
+
 	}
 	.main_menu .main-menu-item{
 		text-align: left !important;
@@ -208,7 +208,7 @@
 			ul {
 				li .nav-link{
 					color: $black-color !important;
-					
+
 				}
 			}
 		}
@@ -224,7 +224,7 @@
 		width: 100%;
 		background-color: $white-color;
 		text-align: center !important;
-		
+
 	}
 	.main_menu .main-menu-item{
 		text-align: left !important;
@@ -255,7 +255,7 @@
 			color: $btn_bg !important;
 		}
 	}
-	
+
 }
 .single_page_menu{
 	.logo_2{
@@ -264,7 +264,7 @@
 	.logo_1{
 		display: inherit;
 	}
-	
+
 	.main-menu-item {
 		ul {
 			li .nav-link{
@@ -275,9 +275,9 @@
 				@media #{$medium_device}{
 					padding: 0px 16px;
 				}
-				
+
 			}
-			
+
 		}
 	}
 }
@@ -298,7 +298,7 @@
 		ul {
 			li .nav-link{
 				color: $black_color;
-				
+
 			}
 		}
 	}
