@@ -91,13 +91,15 @@
                                 <label>Jenis Kelamin <span class="text-danger">*</span></label>
                                 <div class="form-group">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gender" id="gender1">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender1"
+                                            value="L">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             Laki-laki
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gender" id="gender2">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender2"
+                                            value="P">
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Perempuan
                                         </label>

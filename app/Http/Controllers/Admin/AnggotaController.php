@@ -23,7 +23,7 @@ class AnggotaController extends Controller
                 })
                 ->addColumn('status', function ($data) {
                     if ($data->status == 1) {
-                        $status = '<center><span class="badge badge-warning text-white">konfirmasi</span></center>';
+                        $status = '<center><span class="badge badge-warning text-white">belum diterima</span></center>';
                     } elseif ($data->status == 2) {
                         $status = '<center><span class="badge badge-success">diterima</span></center>';
                     } else {
@@ -32,13 +32,34 @@ class AnggotaController extends Controller
                     return $status;
                 })
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-primary btn-xs editRematri"><i class="fas fa-edit"></i></a>';
-                    $btn = $btn . ' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Delete" class="btn btn-danger btn-xs mr-1 deleteRematri"><i class="fas fa-trash"></i></a>';
+                    if ($row->status == 1) {
+                        $btn = '<center><a class="btn btn-primary btn-xs" href="' . route('anggota.verifikasi', Crypt::encryptString($row->id)) . '"><i class="fa fa-check-double"></i> Verifikasi</span></a></center>';
+                    } else {
+                        $btn = '<center><a class="btn btn-info btn-xs" href="' . route('anggota.detail', Crypt::encryptString($row->id)) . '"><i class="fa fa-user"></i> Profil</span></a></center>';
+                    }
                     return $btn;
                 })
                 ->rawColumns(['registrasi', 'status', 'action'])
                 ->make(true);
         }
         return view('admin.anggota.data', compact('menu'));
+    }
+    public function verifikasi($id)
+    {
+        $anggota = Anggota::find(Crypt::decryptString($id));
+        $menu = 'Verifikasi Calon Anggota';
+        return view('admin.anggota.verifikasi', compact('menu', 'anggota'));
+    }
+    public function terima($id)
+    {
+        $anggota = Anggota::find($id);
+        $anggota->update(['status' => '2']);
+        return response()->json(['success' => 'Anggota Berhasil diterima']);
+    }
+    public function detail($id)
+    {
+        $anggota = Anggota::find(Crypt::decryptString($id));
+        $menu = 'Profil Anggota';
+        return view('admin.anggota.detail', compact('menu', 'anggota'));
     }
 }

@@ -9,7 +9,7 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $anggota =  Anggota::get();
+        $anggota =  Anggota::where('status', 2)->get();
         return view('front.index', compact('anggota'));
     }
 }

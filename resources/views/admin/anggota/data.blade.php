@@ -88,6 +88,44 @@
                     },
                 ],
             });
+            $("#konfirmasi").click(function() {
+                $("#konfirmForm").trigger("reset");
+                $("#modelHeadingKonfirm").html("Konfirmasi");
+                $("#ajaxModelkonfirm").modal("show");
+            });
+            $("#konfirmBtn").click(function(e) {
+                e.preventDefault();
+                $(this).html(
+                    "<span class='spinner-border spinner-border-sm'></span><span class='visually-hidden'><i> memproses...</i></span>"
+                );
+                var spj_id = $("#spj_id").val();
+                $.ajax({
+                    data: $("#konfirmForm").serialize(),
+                    url: "{{ url('daftar-anggota/terima') }}" + "/" + spj_id,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.errors) {
+                            $('.alert-danger').html('');
+                            $.each(data.errors, function(key, value) {
+                                $('.alert-danger').show();
+                                $('.alert-danger').append('<strong><li>' +
+                                    value +
+                                    '</li></strong>');
+                                $(".alert-danger").fadeOut(5000);
+                                $("#konfirmBtn").html(
+                                    "<i class='fa fa-check'></i> Konfirmasi");
+                            });
+                        } else {
+                            alertSuccess(data.success);
+                            $("#konfirmBtn").html(
+                                "<i class='fa fa-check'></i> Konfirmasi");
+                            $('#ajaxModelkonfirm').modal('hide');
+                            window.location.href = "{{ url('/daftar-anggota') }}"
+                        }
+                    },
+                });
+            });
         });
     </script>
 @endsection

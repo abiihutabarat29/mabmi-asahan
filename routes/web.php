@@ -35,10 +35,9 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::group(['middleware' => ['checkUser:1']], function () {
         // Daftar Anggota
         Route::get('daftar-anggota', [AnggotaController::class, 'index'])->name('anggota.index');
-        Route::post('daftar-anggota', [AnggotaController::class, 'store'])->name('anggota.store');
-        Route::get('daftar-anggota/{id}/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
-        Route::delete('daftar-anggota/{user}/destroy', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
-        Route::post('daftar-anggota/getpuskesmas', [AnggotaController::class, 'getPuskes'])->name('anggota.getpuskes');
+        Route::get('daftar-anggota/{id}/verifikasi', [AnggotaController::class, 'verifikasi'])->name('anggota.verifikasi');
+        Route::post('daftar-anggota/terima/{id}', [AnggotaController::class, 'terima'])->name('anggota.terima');
+        Route::get('daftar-anggota/{id}/detail', [AnggotaController::class, 'detail'])->name('anggota.detail');
     });
 });
 

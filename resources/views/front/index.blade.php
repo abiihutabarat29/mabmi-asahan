@@ -91,15 +91,18 @@
                     </div>
                 @else
                     @foreach ($anggota as $item)
-                        <div class="col-sm-6 col-lg-4 col-xl-4">
-                            <div class="single-home-blog">
-                                <div class="card">
-                                    <img src="#" class="card-img-top" alt="blog">
-                                    <div class="card-body">
-                                        <a href="#" class="btn_4">Anggota</a>
-                                        <a href="blog.html">
-                                            <h5 class="card-title">Satria Ahmad Banjani</h5>
-                                        </a>
+                        <div class="textimonial_iner owl-carousel">
+                            <div class="testimonial_slider">
+                                <div class="col-sm-6 col-lg-4 col-xl-4">
+                                    <div class="single-home-blog">
+                                        <div class="card">
+                                            <img src="{{ url('storage/foto-anggota/' . $item->foto) }}" alt="Pas Photo"
+                                                class="card-img-top rounded" alt="blog" width="50px">
+                                            <div class="card-body">
+                                                <a href="#" class="btn_4">Anggota</a>
+                                                <h5 class="card-title">{{ $item->nama }}</h5>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
