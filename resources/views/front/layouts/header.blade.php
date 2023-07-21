@@ -16,6 +16,9 @@
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item active">
+                                    <a class="nav-link" href="{{ route('portal.index') }}">Portal</a>
+                                </li>
+                                <li class="nav-item active">
                                     <a class="nav-link" href="{{ route('front.index') }}">Beranda</a>
                                 </li>
                                 {{-- <li class="nav-item">

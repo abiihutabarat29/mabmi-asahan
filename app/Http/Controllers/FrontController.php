@@ -9,6 +9,10 @@ class FrontController extends Controller
 {
     public function index()
     {
+        return view('front.portal');
+    }
+    public function web()
+    {
         $anggota =  Anggota::where('status', 2)->get();
         return view('front.index', compact('anggota'));
     }
