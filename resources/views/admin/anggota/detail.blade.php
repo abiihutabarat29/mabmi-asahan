@@ -72,7 +72,11 @@
                                                         :
                                                     </td>
                                                     <td style="width: 20%">
-                                                        {{ $anggota->gender }}
+                                                        @if ($anggota->gender == 'L')
+                                                            Laki-laki
+                                                        @elseif ($anggota->gender == 'P')
+                                                            Perempuan
+                                                        @endif
                                                     </td>
                                                 </tr>
                                                 <tr>

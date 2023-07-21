@@ -61,7 +61,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_member_counter">
-                        <span class="counter">0</span>
+                        <span class="counter">{{ $jumlah_anggota }}</span>
                         <h4>Semua Anggota</h4>
                     </div>
                 </div>

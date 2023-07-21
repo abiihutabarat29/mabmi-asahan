@@ -14,6 +14,7 @@ class FrontController extends Controller
     public function web()
     {
         $anggota =  Anggota::where('status', 2)->get();
-        return view('front.index', compact('anggota'));
+        $jumlah_anggota =  Anggota::where('status', 2)->count();
+        return view('front.index', compact('anggota', 'jumlah_anggota'));
     }
 }
