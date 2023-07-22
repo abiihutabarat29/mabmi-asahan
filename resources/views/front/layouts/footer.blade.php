@@ -85,6 +85,7 @@
         theme: 'bootstrap4'
     })
 </script>
+@include('sweetalert::alert')
 </body>
 
 </html>

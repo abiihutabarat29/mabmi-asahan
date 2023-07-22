@@ -38,7 +38,8 @@
                                 <div class="form-group">
                                     <input class="form-control  @error('nik') is-invalid @enderror" name="nik"
                                         id="nik" type="text" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Masukkan NIK'" placeholder='Masukkan NIK'>
+                                        onblur="this.placeholder = 'Masukkan NIK'" placeholder='Masukkan NIK'
+                                        value="{{ old('nik') }}">
                                     @error('nik')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -49,7 +50,8 @@
                                 <div class="form-group">
                                     <input class="form-control  @error('nama') is-invalid @enderror" name="nama"
                                         id="nama" type="text" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Masukkan Nama'" placeholder='Masukkan Nama'>
+                                        onblur="this.placeholder = 'Masukkan Nama'" placeholder='Masukkan Nama'
+                                        value="{{ old('nama') }}">
                                     @error('nama')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -60,7 +62,7 @@
                                 <div class="form-group">
                                     <textarea class="form-control w-100  @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" id="tempat_lahir"
                                         cols="15" rows="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tempat Lahir'"
-                                        placeholder='Tempat Lahir'></textarea>
+                                        placeholder='Tempat Lahir'>{{ old('tempat_lahir') }}</textarea>
                                     @error('tempat_lahir')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -70,7 +72,7 @@
                                 <label for="">Tanggal Lahir <span class="text-danger">*</span></label>
                                 <div class="form-group">
                                     <input class="form-control  @error('tgl_lahir') is-invalid @enderror"
-                                        name="tgl_lahir" id="tgl_lahir" type="date">
+                                        name="tgl_lahir" id="tgl_lahir" type="date" value="{{ old('tgl_lahir') }}">
                                     @error('tgl_lahir')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -81,7 +83,7 @@
                                 <div class="form-group">
                                     <textarea class="form-control w-100  @error('alamat') is-invalid @enderror" name="alamat" id="alamat" cols="15"
                                         rows="3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Lengkap'"
-                                        placeholder='Alamat Lengkap'></textarea>
+                                        placeholder='Alamat Lengkap'>{{ old('alamat') }}</textarea>
                                     @error('alamat')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -92,14 +94,14 @@
                                 <div class="form-group">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="gender" id="gender1"
-                                            value="L">
+                                            value="L" {{ old('gender') == 'L' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             Laki-laki
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="gender" id="gender2"
-                                            value="P">
+                                            value="P" {{ old('gender') == 'P' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Perempuan
                                         </label>
@@ -116,12 +118,24 @@
                                         class="form-control select2bs4  @error('agama') is-invalid @enderror"
                                         style="width: 100%;">
                                         <option>::Pilih Agama::</option>
-                                        <option value="Islam">Islam</option>
-                                        <option value="Kristen Protestan">Kristen Protestan</option>
-                                        <option value="Kristen Katholik">Kristen Katholik</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Budha">Budha</option>
-                                        <option value="Konghucu">Konghucu</option>
+                                        <option value="Islam" {{ old('agama') == 'Islam' ? 'selected' : '' }}>
+                                            Islam</option>
+                                        <option value="Kristen Protestan"
+                                            {{ old('agama') == 'Kristen Protestan' ? 'selected' : '' }}>
+                                            Kristen
+                                            Protestan
+                                        </option>
+                                        <option value="Kristen Katholik"
+                                            {{ old('agama') == 'Kristen Katholik' ? 'selected' : '' }}>
+                                            Kristen Katholik
+                                        </option>
+                                        <option value="Hindu" {{ old('agama') == 'Hindu' ? 'selected' : '' }}>Hindu
+                                        </option>
+                                        <option value="Budha" {{ old('agama') == 'Budha' ? 'selected' : '' }}>Budha
+                                        </option>
+                                        <option value="Budha" {{ old('agama') == 'Konghucu' ? 'selected' : '' }}>
+                                            Konghucu
+                                        </option>
                                     </select>
                                     @error('agama')
                                         <small class="text-danger"><strong>{{ $message }}</strong></small>
@@ -135,15 +149,25 @@
                                         class="form-control select2bs4  @error('suku') is-invalid @enderror"
                                         style="width: 100%;">
                                         <option>::Pilih Suku::</option>
-                                        <option value="Jawa">Jawa</option>
-                                        <option value="Sunda">Sunda</option>
-                                        <option value="Batak">Batak</option>
-                                        <option value="Melayu">Melayu</option>
-                                        <option value="Minangkabau">Minangkabau</option>
-                                        <option value="Betawi">Betawi</option>
-                                        <option value="Dayak">Dayak</option>
-                                        <option value="Aceh">Aceh</option>
-                                        <option value="Bali">Bali</option>
+                                        <option value="Jawa" {{ old('suku') == 'Jawa' ? 'selected' : '' }}>
+                                            Jawa</option>
+                                        <option value="Sunda" {{ old('suku') == 'Sunda' ? 'selected' : '' }}>
+                                            Sunda</option>
+                                        <option value="Batak" {{ old('suku') == 'Batak' ? 'selected' : '' }}>
+                                            Batak</option>
+                                        <option value="Melayu" {{ old('suku') == 'Melayu' ? 'selected' : '' }}>
+                                            Melayu</option>
+                                        <option value="Minangkabau"
+                                            {{ old('suku') == 'Minangkabau' ? 'selected' : '' }}>
+                                            Minangkabau</option>
+                                        <option value="Betawi" {{ old('suku') == 'Betawi' ? 'selected' : '' }}>
+                                            Betawi</option>
+                                        <option value="Dayak" {{ old('suku') == 'Dayak' ? 'selected' : '' }}>
+                                            Dayak</option>
+                                        <option value="Aceh" {{ old('suku') == 'Aceh' ? 'selected' : '' }}>
+                                            Aceh</option>
+                                        <option value="Bali" {{ old('suku') == 'Bali' ? 'selected' : '' }}>
+                                            Bali</option>
                                     </select>
                                     @error('suku')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
@@ -155,7 +179,8 @@
                                 <div class="form-group">
                                     <input class="form-control  @error('nohp') is-invalid @enderror" name="nohp"
                                         id="nohp" type="number" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Masukkan Nomor'" placeholder='Masukkan Nomor'>
+                                        onblur="this.placeholder = 'Masukkan Nomor'" placeholder='Masukkan Nomor'
+                                        value="{{ old('nohp') }}">
                                     @error('nohp')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -166,7 +191,8 @@
                                 <div class="form-group">
                                     <input class="form-control  @error('email') is-invalid @enderror" name="email"
                                         id="email" type="email" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Masukkan Email'" placeholder='Masukkan Email'>
+                                        onblur="this.placeholder = 'Masukkan Email'" placeholder='Masukkan Email'
+                                        value="{{ old('email') }}">
                                     @error('email')
                                         <span class="invalid-feedback"><strong>{{ $message }}</strong></span>
                                     @enderror
@@ -209,5 +235,5 @@
                 </div>
             </div>
         </div>
+        @include('front.layouts.footer')
     </section>
-    @include('front.layouts.footer')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Anggota;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisterController extends Controller
 {
@@ -67,6 +68,9 @@ class RegisterController extends Controller
         $validatedData['foto'] = $fileName;
         $validatedData['status'] = 1;
         $anggota = Anggota::create($validatedData);
-        return redirect()->route('register.index')->with('success', json_encode(['success' => 'Register successfully.']));
+
+        Alert::success('Sukses', 'Register successfully.');
+
+        return back();
     }
 }
