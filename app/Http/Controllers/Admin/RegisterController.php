@@ -69,7 +69,7 @@ class RegisterController extends Controller
         $validatedData['status'] = 1;
         $anggota = Anggota::create($validatedData);
 
-        Alert::success('Sukses', 'Register successfully.');
+        Alert::success('Berhasil', 'Register successfully.');
 
         return back();
     }
