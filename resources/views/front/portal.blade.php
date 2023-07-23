@@ -90,7 +90,7 @@
         <script type="text/javascript" src="{{ asset('portal/js/scripts.js') }}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
-                $.backstretch([window.location.origin + '/portal/images/portal-mabmi.png'], {
+                $.backstretch([window.location.origin + '/portal/images/landing-page-mabmi.png'], {
                     fade: 1000,
                     duration: 3000
                 });
