@@ -69,8 +69,9 @@ class RegisterController extends Controller
         $validatedData['status'] = 1;
         $anggota = Anggota::create($validatedData);
 
-        Alert::success('Berhasil', 'Register successfully.');
+        Alert::success('Berhasil', 'Permintaan kamu berhasil dikirimkan.');
 
-        return back();
+        // Redirect ke halaman register.index
+        return redirect()->route('register.index');
     }
 }

@@ -70,8 +70,8 @@
     </section>
     <!-- member_counter counter end -->
     <!--::blog_part start::-->
-    <section class="blog_part section_padding">
-        <div class="container">
+    <section class="testimonial_part mb-3">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
                     <div class="section_tittle text-center">
@@ -80,8 +80,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                @if ($anggota->isEmpty())
+            @if ($anggota->isEmpty())
+                <div class="row justify-content-center">
                     <div class="col-sm-12 col-lg-6 col-xl-4">
                         <div class="single-home-blog">
                             <div class="card">
@@ -89,27 +89,34 @@
                             </div>
                         </div>
                     </div>
-                @else
-                    @foreach ($anggota as $item)
+                </div>
+            @else
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="textimonial_iner owl-carousel">
-                            <div class="testimonial_slider">
-                                <div class="col-sm-6 col-lg-4 col-xl-4">
-                                    <div class="single-home-blog">
-                                        <div class="card">
-                                            <img src="{{ url('storage/foto-anggota/' . $item->foto) }}" alt="Pas Photo"
-                                                class="card-img-top rounded" alt="blog" width="50px">
-                                            <div class="card-body">
-                                                <a href="#" class="btn_4">Anggota</a>
-                                                <h5 class="card-title">{{ $item->nama }}</h5>
+                            @foreach ($anggota as $item)
+                                <div class="testimonial_slider">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-xl-4 col-sm-8 align-self-center">
+                                            <div class="testimonial_slider_text">
+                                                <h4>{{ $item->nama }}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-xl-2 col-sm-4">
+                                            <div class="testimonial_slider_img">
+                                                <img src="{{ url('storage/foto-anggota/' . $item->foto) }}"
+                                                    alt="Pas Photo" class="card-img-top rounded" alt="blog"
+                                                    width="50px">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                    @endforeach
-                @endif
-                {{-- <div class="col-sm-6 col-lg-4 col-xl-4">
+                    </div>
+                </div>
+            @endif
+            {{-- <div class="col-sm-6 col-lg-4 col-xl-4">
                     <div class="single-home-blog">
                         <div class="card">
                             <img src="#" class="card-img-top" alt="blog">
@@ -122,7 +129,6 @@
                         </div>
                     </div>
                 </div> --}}
-            </div>
         </div>
     </section>
     <!--::blog_part end::-->
