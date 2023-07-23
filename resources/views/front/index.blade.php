@@ -70,7 +70,7 @@
     </section>
     <!-- member_counter counter end -->
     <!--::blog_part start::-->
-    <section class="testimonial_part mb-3">
+    <section class="testimonial_part mb-3 mt-3">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
