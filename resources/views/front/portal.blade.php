@@ -45,13 +45,18 @@
         <div id="main">
             <div class="inner fade-in">
                 <header class="site-header"><br><br>
-                    <h1 class="site-title"><img src="{{ asset('portal/images/logo-mabmi.png') }}" width="100"
-                            height="50" alt="InTime" /></h1>
+                    <h1 class="site-title"><img src="{{ asset('portal/images/logo-portal.png') }}" width="500"
+                            height="200" alt="InTime" />
+                    </h1>
+
                 </header>
                 <section class="content">
                     <center style="color:#0c2e60; font-size : 20px">
-                        <span style="font-weight: 900; letter-spacing: 10px">(MABMI)</span><br>
-                        <span style="font-weight: 900; letter-spacing: 2px">MAJELIS ADAT BUDAYA MELAYU INDONESIA</span>
+                        <span style="font-weight: 900; letter-spacing: 8px">(PD MABMI)</span><br>
+                        <span style="font-weight: 900; letter-spacing: 2px">PENGURUS DAERAH</span><br>
+                        <span style="font-weight: 900; letter-spacing: 2px">MAJELIS ADAT BUDAYA MELAYU
+                            INDONESIA</span><br>
+                        <span style="font-weight: 900; letter-spacing: 2px">KABUPATEN ASAHAN</span>
                     </center>
                     <br><br> <br><br> <br><br>
                     <div class="modal-toggle">
@@ -61,7 +66,7 @@
                         <a href="{{ route('register.index') }}" class="button button-contactForm btn_1"><span
                                 class="fa fa-edit"></span>
                             PENDAFTARAN</a>
-                    </div> <br><br><br><br><br><br>
+                    </div> <br><br><br>
                     <div class="social">
                         <a href="#" target="_blank"><span class="fa fa-facebook" title="Facebook"></span></a>
                         <a href="#" target="_blank"><span class="fa fa-twitter" title="Twitter"></span></a>
